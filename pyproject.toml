@@ -1,39 +1,41 @@
 [build-system]
-requires = ["flit"]
-build-backend = "flit.buildapi"
+requires = ["flit_core >=2,<4"]
+build-backend = "flit_core.buildapi"
 
-[tool.flit.metadata]
-module = "modulegraph2"
-author = "Ronald Oussoren"
-author-email = "ronaldoussoren@mac.com"
-home-page = "https://modulegraph2.readthedocs.io/"
-description-file = "ReadMe.rst"
-requires = [
-    "typing_extensions",
-    "objectgraph",
-
-    # Backward compatiblity with Python 3.6:
-    "dataclasses; python_version < '3.7'",
+[project]
+name = "modulegraph2"
+description = "A basic graph library"
+dynamic = ["version"]
+authors = [
+    {name = "Ronald Oussoren", email = "ronaldoussoren@mac.com"},
 ]
-requires-python = ">=3.6,<4"
+home-page = "https://modulegraph2.readthedocs.io/"
+readme = "ReadMe.rst"
+dependencies = [
+    "objectgraph>=1.0.5",
+]
+requires-python = ">=3.10"
 classifiers = [
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.6",
-    "Programming Language :: Python :: 3.7",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Topic :: Software Development :: Build Tools",
-    "Development Status :: 4 - Beta",
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Free Threading :: 3 - Stable",
+
 ]
 license = "MIT"
+license-files = ["doc/license.rst"]
 
-[tool.flit.metadata.urls]
+[project.urls]
 "Documentation" = "https://modulegraph2.readthedocs.io/"
 "Source Code" = "https://github.com/ronaldoussoren/modulegraph2/"
 "Issue Tracker" = "https://github.com/ronaldoussoren/modulegraph2/issues"

@@ -1,8 +1,18 @@
 Release history
 ===============
 
+2.3.1
+-----
+
+* Modernize pyproject.toml.
+
+* Drop dependency on ``typing_extensions``.
+
 2.3
 ---
+
+* Supports python 3.10 or later (drops support for 3.9
+  and adds support for 3.13 and 3.14)
 
 * Add `modulegraph2.Modulegraph.add_dependencies_for_source``
   that will add the imports in a python code fragment
@@ -29,6 +39,12 @@ Release history
 
   This currently only supports packages found in the
   filesystem (excluding zipfiles).
+
+* Type annotation for the argument of ``ModuleGraph.add_excludes``
+  is now ``Iterable[str]`` instead of ``Iterator[str]``.
+
+* Added ``extension_attributes`` to ``PyPIDistribution`` for
+  consistency with other nodes.
 
 2.2.1
 -----
